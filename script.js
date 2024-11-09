@@ -1,4 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Инициализация Swiper с адаптивными настройками
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 3, 
+    spaceBetween: 100,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      1920: {
+        slidesPerView: 6,
+      },
+      1600: {
+        slidesPerView: 5,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+      900: {
+        slidesPerView: 3,
+      },
+      200: {
+        slidesPerView: 1,
+      },
+    },
+  });
+
   // Модальное окно "Избранное"
   const favoritesImg = document.querySelector(".Favorites");
   const modal = document.querySelector(".modal");
