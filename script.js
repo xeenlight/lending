@@ -1,13 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   // Модальное окно "Избранное"
-  const favoritesImg = document.querySelector(".Favorites"); 
-  const modal = document.querySelector(".modal");  
+  const favoritesImg = document.querySelector(".Favorites");
+  const modal = document.querySelector(".modal");
   const closeModal = modal.querySelector(".exit");
   favoritesImg.addEventListener("click", function () {
-    modal.style.display = "flex";  
+    modal.style.display = "flex";
   });
   closeModal.addEventListener("click", function () {
-    modal.style.display = "none";  
+    modal.style.display = "none";
   });
 
   // Модальное окно для логина
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Меню и языковая панель
+  // Меню
   const menu = document.querySelector(".menu");
   const popupMenu = document.querySelector(".popup-menu");
 
@@ -56,30 +56,33 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Языковая панель
-  const language = document.querySelector(".language");
-  const languageDrop = document.querySelector(".languageDrop");
-  const currentLang = document.getElementById("current-lang");
+  const languageDrop = document.querySelector('.languageDrop');
+  const currentLanguage = document.getElementById('currentLanguage');
+  const languageOptions = document.querySelector('.languageOptions');
+  const languageLinks = document.querySelectorAll('.languageOption');
 
-  language.addEventListener("click", function (e) {
-    e.stopPropagation();
-    language.style.display = "none";
-    languageDrop.style.display = "block";
+  const availableLanguages = ['RU', 'KZ', 'EN'];
+
+  function updateLanguageOptions(selectedLang) {
+    const remainingLanguages = availableLanguages.filter(lang => lang !== selectedLang);
+    const options = languageOptions.querySelectorAll('a.languageOption');
+    options.forEach((option, index) => {
+      option.textContent = remainingLanguages[index];
+    });
+  }
+
+  currentLanguage.addEventListener('click', function(event) {
+    event.preventDefault();
+    languageDrop.classList.toggle('open');
   });
 
-  document.addEventListener("click", function (e) {
-    if (!language.contains(e.target) && !languageDrop.contains(e.target)) {
-      language.style.display = "flex"; 
-      languageDrop.style.display = "none"; 
-    }
-  });
-
-  const languageLinks = languageDrop.querySelectorAll("a");
-  languageLinks.forEach(function (link) {
-    link.addEventListener("click", function (e) {
-      e.preventDefault(); 
-      currentLang.textContent = link.textContent;
-      language.style.display = "flex";
-      languageDrop.style.display = "none";
+  languageLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      const selectedLanguage = link.textContent;
+      currentLanguage.textContent = selectedLanguage;
+      updateLanguageOptions(selectedLanguage);
+      languageDrop.classList.remove('open');
     });
   });
 });
