@@ -533,14 +533,16 @@ p {
   color: #ffffff;
   text-transform: uppercase;
 }
-.social img{
+.social img {
   width: 39px;
   margin-bottom: calc(-3.2vw + 92.136px);
 }
 
-
 section {
   padding: 0 calc(10.6vw - 23.806px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .swiper-container {
@@ -551,7 +553,7 @@ section {
   gap: 55px;
   width: calc(78.8vw + 47.612px);
   height: calc(8vw + 254.146px);
-  padding: calc(2.6vw + 10.291px) calc(0.3vw + 83.786px) calc(3vw + 18.835px);
+  padding: calc(2.6vw + 10.291px) calc(0.3vw + 83.786px) calc(5.3vw + 39.612px);
   border-radius: 10px;
   background: #ffffff;
   box-shadow: 0px 21px 51.5px 0px #00000040;
@@ -579,7 +581,13 @@ section {
   align-items: center;
   text-align: center;
 }
-
+element.style {
+  transition-duration: 0ms;
+  transform: translate3d(0px, 0px, 0px);
+  transition-delay: 0ms;
+  display: flex;
+  align-items: baseline;
+}
 .iconInfo img {
   width: 174px;
 }
@@ -594,23 +602,131 @@ section {
 .swiper-button-next {
   width: 30px;
   margin-right: 20px;
-  color: #336ABB;
+  color: #336abb;
 }
 .swiper-button-prev {
   width: 30px;
   margin-left: 20px;
-  color: #336ABB;
+  color: #336abb;
 }
-.swiper-pagination{
+.swiper-pagination {
   display: flex;
-  margin-bottom: calc(2.3vw + 15.262px);
   justify-content: center;
+  margin-bottom: 20px;
 }
-/* Стили для пагинации */
-.swiper-pagination-bullet {
-  background-color: #336ABB;
+.swiper-pagination-1 {
+  margin-top: 20px;
+  margin-bottom: 40px; /* Отступ для первого слайдера */
+}
+.swiper-pagination-1 .swiper-pagination-bullet {
+  background-color: #336abb; /* Изменить цвет для первого слайдера */
+}
+h3 {
+  font-size: 48px;
+  font-weight: 500;
+  color: #caa57b;
+  margin-bottom: 30px;
+}
+.swiper-container-restaurants {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 60px;
+  overflow: hidden;
+  position: relative;
+  padding: 0 0 70px;
+}
 
+/* Обертка слайдов */
+.swiper-wrapper {
+  display: flex;
+  width: 100%;
 }
+
+/* Слайды */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 174px; /* Ширина слайда */
+  flex-shrink: 0; /* Не сжимаются */
+}
+
+.RestaurantCart {
+  width: 375px;
+  height: 322px;
+
+  top: 68px;
+  left: 15px;
+
+  text-align: center;
+
+  top: 68px;
+  left: 15px;
+  border-radius: 10px;
+
+  border: 1px solid #d8d8d8;
+}
+
+.RestaurantCart img {
+  width: 100%;
+  height: 254px;
+  border-radius: 10px;
+  left: -15px; /* Сдвигаем влево на 30px */
+  top: -222px; /* Сдвигаем вверх на 50px */
+}
+.RestaurantCart span {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+.RestaurantCart img {
+  display: flex;
+  width: 100%;
+  height: 254px;
+  border-radius: 10px;
+  position: relative;
+  top: 0px;
+}
+.nameRestaurant {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+  align-items: center;
+}
+.nameRestaurant span {
+  font-size: 20px;
+  font-weight: 500;
+  color: #caa57b;
+}
+.nameRestaurant span:nth-of-type(2) {
+  font-size: 10px;
+  font-weight: 300;
+  color: #b8b8b8;
+}
+
+
+.swiper-pagination-bullet {
+  background-color: #336abb;
+}
+
+.swiper-pagination-2 {
+  display: none;
+
+
+  margin-top: 50px; /* Отступ для второго слайдера */
+}
+
+.swiper-pagination-2 .swiper-pagination-bullet {
+  background-color: #336abb; /* Изменить цвет для второго слайдера */
+}
+
 
 @media (max-width: 1350px) {
   .menu {
@@ -658,8 +774,12 @@ section {
   p {
     text-align: center;
   }
-  .swiper-button-next, .swiper-button-prev {
+  .swiper-button-next,
+  .swiper-button-prev {
     display: none;
   }
-
+  .swiper-pagination-2{
+    display: block;
+  }
+  
 }

@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Инициализация Swiper с адаптивными настройками
+  // Инициализация первого слайдера (например, с категориями)
   const swiper = new Swiper('.swiper-container', {
-    slidesPerView: 3, 
+    slidesPerView: 3,
     spaceBetween: 100,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: '.swiper-pagination-1', // Указываем пагинацию для первого слайдера
       clickable: true,
     },
     breakpoints: {
@@ -30,6 +30,36 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   });
 
+  // Инициализация второго слайдера (для ресторанов)
+  const swiperRestaurants = new Swiper('.swiper-container-restaurants', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination-2', // Указываем пагинацию для второго слайдера
+      clickable: true,
+    },
+    breakpoints: {
+      1920: {
+        slidesPerView: 4,
+      },
+
+      1300: {
+        slidesPerView: 3,
+      },
+      900: {
+        slidesPerView: 2,
+      },
+      200: {
+        slidesPerView: 1,
+      },
+    },
+  });
+
+
   // Модальное окно "Избранное"
   const favoritesImg = document.querySelector(".Favorites");
   const modal = document.querySelector(".modal");
@@ -43,15 +73,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Модальное окно для логина
   const userDiv = document.querySelector(".User");
-  const modalLogin = document.querySelector(".modalLogin"); // Модальное окно для логина
-  const closeModalLogin = modalLogin.querySelector(".exit"); // Кнопка закрытия модального окна логина
+  const modalLogin = document.querySelector(".modalLogin");
+  const closeModalLogin = modalLogin.querySelector(".exit");
 
   userDiv.addEventListener("click", function () {
-    modalLogin.style.display = "flex"; // Открываем модальное окно
+    modalLogin.style.display = "flex";
   });
 
   closeModalLogin.addEventListener("click", function () {
-    modalLogin.style.display = "none"; // Закрываем модальное окно
+    modalLogin.style.display = "none";
   });
 
   // Бургер-меню для мобильной версии
@@ -59,13 +89,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const popupMenuMobail = document.querySelector(".popup-menuMobail");
 
   burgerMenuMobail.addEventListener("click", function () {
-    popupMenuMobail.classList.toggle("show"); // Переключаем класс show для popup
+    popupMenuMobail.classList.toggle("show");
   });
 
-  // Закрытие меню, если клик был вне
   document.addEventListener("click", function (e) {
     if (!burgerMenuMobail.contains(e.target) && !popupMenuMobail.contains(e.target)) {
-      popupMenuMobail.classList.remove("show"); // Скрываем меню, если клик был вне
+      popupMenuMobail.classList.remove("show");
     }
   });
 
