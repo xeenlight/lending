@@ -629,6 +629,8 @@ h3 {
   font-weight: 500;
   color: #caa57b;
   margin-bottom: 30px;
+  display: flex;
+  text-align: center;
 }
 .swiper-container-restaurants {
   width: 100%;
@@ -748,6 +750,7 @@ h3 {
   gap: 5px;
   color: #caa57b;
   align-items: center;
+  cursor: pointer;
 }
 
 .navigationArrow span {
