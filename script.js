@@ -34,14 +34,44 @@ document.addEventListener('DOMContentLoaded', function () {
   const swiperRestaurants = new Swiper('.swiper-container-restaurants', {
     slidesPerView: 3,
     spaceBetween: 30,
+
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.navigationArrow1',
     },
     pagination: {
-      el: '.swiper-pagination-2', // Указываем пагинацию для второго слайдера
+      el: '.swiper-pagination-2', 
       clickable: true,
     },
+    loop: true,
+    breakpoints: {
+      1920: {
+        slidesPerView: 4,
+      },
+
+      1300: {
+        slidesPerView: 3,
+      },
+      900: {
+        slidesPerView: 2,
+      },
+      200: {
+        slidesPerView: 1,
+      },
+    },
+  });
+
+  const swiperHostel = new Swiper('.swiper-container-hostel', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+
+    navigation: {
+      nextEl: '.navigationArrow2',
+    },
+    pagination: {
+      el: '.swiper-pagination-2', 
+      clickable: true,
+    },
+    loop: true,
     breakpoints: {
       1920: {
         slidesPerView: 4,
@@ -60,6 +90,34 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
+  const swiperGuide = new Swiper('.swiper-container-guide', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+
+    navigation: {
+      nextEl: '.navigationArrow3',
+    },
+    pagination: {
+      el: '.swiper-pagination-2', 
+      clickable: true,
+    },
+    loop: true,
+    breakpoints: {
+      1920: {
+        slidesPerView: 4,
+      },
+
+      1300: {
+        slidesPerView: 3,
+      },
+      900: {
+        slidesPerView: 2,
+      },
+      200: {
+        slidesPerView: 1,
+      },
+    },
+  });
   // Модальное окно "Избранное"
   const favoritesImg = document.querySelector(".Favorites");
   const modal = document.querySelector(".modal");
