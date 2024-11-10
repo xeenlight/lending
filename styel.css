@@ -590,13 +590,14 @@ element.style {
 
 
 .iconInfo img {
-  width: 174px;
+  width: 130px;
 }
 
 .iconInfo span {
   font-size: 16px;
   font-weight: 300;
   color: #3e3e3e;
+  width: 174px;
   height: 40px;
 }
 
