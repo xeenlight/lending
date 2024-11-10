@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Инициализация второго слайдера (для ресторанов)
   const swiperRestaurants = new Swiper('.swiper-container-restaurants', {
     slidesPerView: 3,
-    spaceBetween: 30,
+    spaceBetween: 100,
 
     navigation: {
       nextEl: '.navigationArrow1',
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const swiperHostel = new Swiper('.swiper-container-hostel', {
     slidesPerView: 3,
-    spaceBetween: 30,
+    spaceBetween: 100,
 
     navigation: {
       nextEl: '.navigationArrow2',
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const swiperGuide = new Swiper('.swiper-container-guide', {
     slidesPerView: 3,
-    spaceBetween: 30,
+    spaceBetween: 100,
 
     navigation: {
       nextEl: '.navigationArrow3',

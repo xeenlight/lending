@@ -69,7 +69,7 @@ input {
 
 .languageDrop {
   width: calc(3.6vw + 35.65px);
-  padding: calc(0.6vw + 6.5px) calc(0.6vw + 6.5px);
+  padding: calc(0.9vw + 0.658px) calc(0.6vw + 6.5px);
   border-radius: 10px;
   border: 1px solid #336abb;
   font-size: calc(0.2vw + 12.272px);
@@ -544,7 +544,13 @@ section {
   flex-direction: column;
   align-items: center;
 }
-
+element.style {
+  transition-duration: 0ms;
+  transform: translate3d(0px, 0px, 0px);
+  transition-delay: 0ms;
+  display: flex;
+  align-items: baseline;
+}
 .swiper-container {
   width: 100%;
   height: auto;
@@ -676,7 +682,7 @@ h3 {
 }
 
 .RestaurantCart {
-  width: 375px;
+  width: calc(1.1vw + 338.942px);
   height: 322px;
 
   text-align: center;
@@ -702,8 +708,8 @@ h3 {
 
 .RestaurantCart img {
   display: flex;
-  width: 100%;
-  height: 254px;
+  width: calc(1.1vw + 338.942px);
+
   border-radius: 10px;
   position: relative;
   top: 0px;
@@ -816,4 +822,14 @@ h3 {
   .navigationArrow1, .navigationArrow2, .navigationArrow3{
     display: none;
   }
+  .iconInfo {
+    margin-bottom: 35px;
+}
+.RestaurantCart img {
+  display: flex;
+  width: calc(1.1vw + 338.942px);
+  border-radius: 10px;
+  position: static;
+  top: 0px;
+}
 }
