@@ -773,10 +773,11 @@ h5 {
 .buttons {
   width: 100%;
   max-width: 760px;
+
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  cursor: pointer;
+
   margin-bottom: 30px;
 }
 
@@ -784,36 +785,46 @@ h5 {
   height: 56px;
   padding: 18px 20px 18px 20px;
   border-radius: 10px;
-  border: 1px solid #336abb;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
   font-size: 16px;
   font-weight: 300;
   text-transform: uppercase;
   color: #336abb;
+  border: 1px solid #336abb;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Плавный переход */
 }
+
+.buttons button:hover,
+.buttons button:focus {  /* Добавляем :focus для сохранения стилей после клика */
+  height: 56px;
+  padding: 18px 20px 18px 20px;
+  border-radius: 10px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #ffff;
+  background-color: #336abb;
+  cursor: pointer;
+}
+
 
 .MapInfo {
   width: 100%;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
 .Map {
   width: calc(12vw + 296.117px);
   height: calc(15.9vw + 392.2px);
   position: relative;
   margin-bottom: 80px;
 }
-
-.Map img {
-  position: absolute;
-  transition: filter 0.3s ease; /* Плавное изменение фильтра */
-}
-
-.Map img.selected {
-  filter: brightness(0) saturate(100%) invert(27%) sepia(55%) saturate(3576%) hue-rotate(179deg) brightness(100%) contrast(96%);
-}
-
 
 .Map img:nth-child(1) {
   width: calc(6.1vw + 150.89px);
