@@ -587,13 +587,8 @@ element.style {
   align-items: center;
   text-align: center;
 }
-element.style {
-  transition-duration: 0ms;
-  transform: translate3d(0px, 0px, 0px);
-  transition-delay: 0ms;
-  display: flex;
-  align-items: baseline;
-}
+
+
 .iconInfo img {
   width: 174px;
 }
@@ -602,6 +597,7 @@ element.style {
   font-size: 16px;
   font-weight: 300;
   color: #3e3e3e;
+  height: 40px;
 }
 
 /* Стили для стрелок навигации */
