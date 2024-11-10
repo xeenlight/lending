@@ -679,51 +679,46 @@ h3 {
   width: 174px; /* Ширина слайда */
   flex-shrink: 0; /* Не сжимаются */
 }
-
 .RestaurantCart {
   width: calc(1.1vw + 338.942px);
   height: 322px;
-
   text-align: center;
-
   border-radius: 10px;
-
   border: 1px solid #d8d8d8;
+  position: relative; /* Это нужно, чтобы картинки располагались относительно этого контейнера */
 }
 
-.RestaurantCart img {
-  width: 100%;
-  height: 254px;
-  border-radius: 10px;
-  left: -15px; /* Сдвигаем влево на 30px */
-  top: -222px; /* Сдвигаем вверх на 50px */
-}
-.RestaurantCart span {
-  display: block;
-  font-size: 14px;
-  color: #333;
-  font-weight: bold;
+.RestaurantCart img:nth-of-type(1) {
+  width: 38px;
+  position: absolute; /* Накладываем на вторую картинку */
+  top: 10px; /* Отступ сверху, настройте по нужде */
+  right: 10px; /* Отступ слева, настройте по нужде */
+  z-index: 1; /* Обеспечиваем, что эта картинка будет поверх второй */
+  cursor: pointer;
 }
 
-.RestaurantCart img {
-  display: flex;
+.RestaurantCart img:nth-of-type(2) {
   width: calc(1.1vw + 338.942px);
-
   border-radius: 10px;
-  position: relative;
-  top: 0px;
+  position: relative; /* или static, чтобы картинка занимала обычное место */
+  z-index: 0; /* Вторая картинка будет под первой */
 }
+
 .nameRestaurant {
   display: flex;
   justify-content: space-between;
   padding: 20px 10px;
   align-items: center;
+  position: relative; /* Обеспечиваем, чтобы надписи не были за картинками */
+  z-index: 2; /* Ставим название выше картинок */
 }
+
 .nameRestaurant span {
   font-size: 20px;
   font-weight: 500;
   color: #caa57b;
 }
+
 .nameRestaurant span:nth-of-type(2) {
   font-size: 10px;
   font-weight: 300;
