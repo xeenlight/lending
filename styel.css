@@ -588,7 +588,6 @@ element.style {
   text-align: center;
 }
 
-
 .iconInfo img {
   width: 130px;
 }
@@ -625,7 +624,7 @@ element.style {
   background-color: #336abb; /* Изменить цвет для первого слайдера */
 }
 h3 {
-  font-size: 48px;
+  font-size: calc(1.2vw + 25.703px);
   font-weight: 500;
   color: #caa57b;
   margin-bottom: 30px;
@@ -738,7 +737,9 @@ h3 {
 .swiper-pagination-2 .swiper-pagination-bullet {
   background-color: #336abb; /* Изменить цвет для второго слайдера */
 }
-.navigationArrow1, .navigationArrow2, .navigationArrow3 {
+.navigationArrow1,
+.navigationArrow2,
+.navigationArrow3 {
   display: flex;
   width: 100%;
   margin-bottom: 15px;
@@ -760,6 +761,115 @@ h3 {
   border: 1px;
   border: 1px solid #d8d8d8;
   margin-bottom: 60px;
+}
+
+h5 {
+  font-size: calc(0.5vw + 18.09px);
+  font-weight: 500;
+  line-height: 35px;
+  color: #caa57b;
+  margin-bottom: 30px;
+}
+.buttons {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.buttons button {
+  height: 56px;
+  padding: 18px 20px 18px 20px;
+  border-radius: 10px;
+  border: 1px solid #336abb;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #336abb;
+}
+
+.MapInfo {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Map {
+  width: calc(12vw + 296.117px);
+  height: calc(15.9vw + 392.2px);
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.Map img {
+  position: absolute;
+  transition: filter 0.3s ease; /* Плавное изменение фильтра */
+}
+
+.Map img.selected {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(55%) saturate(3576%) hue-rotate(179deg) brightness(100%) contrast(96%);
+}
+
+
+.Map img:nth-child(1) {
+  width: calc(6.1vw + 150.89px);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.Map img:nth-child(2) {
+  width: calc(6.1vw + 150.029px);
+  position: absolute;
+  top: calc(3.5vw + 85.871px);
+  right: calc(3.4vw + 81.348px);
+}
+.Map img:nth-child(3) {
+  width: calc(4.8vw + 117.339px);
+  position: absolute;
+  top: calc(4.4vw + 108.768px);
+  right: calc(7vw + 173.219px);
+}
+.Map img:nth-child(4) {
+  width: calc(4.4vw + 107.778px);
+  position: absolute;
+  top: calc(9.7vw + 237.194px);
+  right: calc(7.6vw + 188.832px);
+}
+.Map img:nth-child(5) {
+  width: calc(3.8vw + 94.439px);
+  position: absolute;
+  top: calc(8.8vw + 216.535px);
+  right: calc(4.6vw + 112.052px);
+}
+.Map img:nth-child(6) {
+  width: calc(4.6vw + 112.655px);
+  position: absolute;
+  top: calc(6.9vw + 171.458px);
+  right: calc(0.6vw + 17.613px);
+}
+.Map img:nth-child(7) {
+  width: calc(4vw + 98.127px);
+  position: absolute;
+  top: calc(10.5vw + 259.09px);
+  right: calc(4.5vw + 110.529px);
+}
+@media (max-width: 600px) {
+  .buttons button {
+    width: 100%;
+    padding: 18px 20px 18px 20px;
+    border-radius: 10px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #336abb;
+    border: 1px solid #336abb;
+  }
 }
 @media (max-width: 1350px) {
   .menu {
@@ -814,17 +924,26 @@ h3 {
   .swiper-pagination-2 {
     display: block;
   }
-  .navigationArrow1, .navigationArrow2, .navigationArrow3{
+  .navigationArrow1,
+  .navigationArrow2,
+  .navigationArrow3 {
     display: none;
   }
   .iconInfo {
     margin-bottom: 35px;
-}
-.RestaurantCart img {
-  display: flex;
-  width: calc(1.1vw + 338.942px);
-  border-radius: 10px;
-  position: static;
-  top: 0px;
-}
+  }
+  .RestaurantCart img {
+    display: flex;
+    width: calc(1.1vw + 338.942px);
+    border-radius: 10px;
+    position: static;
+    top: 0px;
+  }
+  .MapInfo {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
